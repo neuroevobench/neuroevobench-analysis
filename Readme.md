@@ -1,4 +1,4 @@
-# `NeuroEvoBench` Analysis & Experiment Configurations 🐢
+# `NeuroEvoBench` Analysis & Experiment Configs 🐢
 
 This repository contains visualization results, EO configurations and logs for testing the performance of evolutionary strategies in [`evosax`](https://github.com/RobertTLange/evosax/).
 
