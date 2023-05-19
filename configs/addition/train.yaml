@@ -1,0 +1,45 @@
+train_config:
+  num_generations: 5000
+  eval_every_gen: 200
+  strategy_name: SNES
+  popsize: 128
+  problem_type: addition
+  task_config:
+    batch_size: 1024
+    seq_length: 100
+  model_config:
+    num_hidden_units: 32
+  es_params:
+    init_min: 0.0
+    init_max: 0.0
+  es_config:
+    sigma_init: 0.05
+  num_hyper_search_iters: 50
+  search_config:
+    refine_after: 40
+    refine_top_k: 10
+
+log_config:
+  time_to_track:
+    - "search_iter" 
+    - "num_gens"
+  what_to_track: 
+    - "mean_pop_perf"
+    - "max_pop_perf"
+    - "min_pop_perf"
+    - "best_pop_perf"
+    - "test_eval_perf"
+    - "best_eval_perf"
+  verbose: true
+  print_every_k_updates: 1
+  overwrite: 1
+  model_type: "jax"
+  use_wandb: true
+  wandb_config:
+    project: neb
+    group: search-addition
+    name: seed0
+
+device_config:
+  device_type: "gpu"
+  num_devices: 1

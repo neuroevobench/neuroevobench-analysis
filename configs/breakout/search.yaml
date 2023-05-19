@@ -2,9 +2,9 @@
 meta_job_args:
     project_name: "neuroevobench"
     experiment_type: "hyperparameter-search"
-    base_train_fname: "mle_exec.sh"
+    base_train_fname: "mle_search.sh"
     base_train_config: "configs/breakout/train.yaml"
-    experiment_dir: "experiments/search/breakout"
+    experiment_dir: "experiments/breakout/search"
 
 # Parameters specific to the hyperparameter search
 param_search_args:
