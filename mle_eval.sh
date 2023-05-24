@@ -27,7 +27,7 @@ case $key in
     shift # past value
     ;;
     -wb_group|--wb_group)
-    WB_GROUP="$2"
+    WB_GROUP="eval-$2"
     shift # past argument
     shift # past value
     ;;
@@ -36,5 +36,5 @@ done
 set -- "${POSITIONAL[@]}" # restore positional parameters
 
 neb-eval --config_fname ${CONFIG_FNAME} --seed_id ${SEED_ID} --experiment_dir ${EXPERIMENT_DIR} -wb_project ${WB_PROJECT} -wb_group ${WB_GROUP}
-# bash mle_eval.sh --config_fname mnist_generate/train.yaml  --seed_id 0 --experiment_dir experiments -wb_project neuroevobench -wb_group testgroup
-# neb-eval --config_fname mnist_generate/train.yaml  --seed_id 0 --experiment_dir experiments -wb_project neuroevobench -wb_group testgroup
+# bash mle_eval.sh --config_fname configs/fmnist_classify/train.yaml  --seed_id 0 --experiment_dir experiments -wb_project neuroevobench -wb_group testgroup
+# neb-eval --config_fname configs/fmnist_classify/train.yaml  --seed_id 0 --experiment_dir experiments -wb_project neuroevobench -wb_group testgroup

@@ -1,4 +1,5 @@
 train_config:
+  results_dir: experiments/fmnist_classify/search
   num_generations: 4000
   eval_every_gen: 100
   strategy_name: SNES
@@ -38,7 +39,7 @@ log_config:
   use_wandb: true
   wandb_config:
     project: neb
-    group: search-fmnist_classify
+    group: fmnist_classify
     name: seed0
 
 device_config:
