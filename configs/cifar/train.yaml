@@ -1,4 +1,5 @@
 train_config:
+  results_dir: experiments/cifar/search
   num_generations: 5000
   eval_every_gen: 100
   strategy_name: SNES
