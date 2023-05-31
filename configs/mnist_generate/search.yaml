@@ -48,8 +48,8 @@ single_job_args:
     env_name: "es_benchmark"
     time_per_job: "00:06:00"
     partition:
-        # - "ex_scioi_gpu"
-        - "test_a100nv"
+        - "ex_scioi_gpu"
+        - "ex_scioi_a100nv"
     gpu_type: null
     memory_per_cpu: 10000
     # gpu_prefix: "cuda"

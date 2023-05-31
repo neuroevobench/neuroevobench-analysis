@@ -40,7 +40,7 @@ log_config:
   use_wandb: true
   wandb_config:
     project: neb
-    group: search-asterix
+    group: asterix
     name: seed0
 
 device_config:

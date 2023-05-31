@@ -38,7 +38,7 @@ log_config:
   use_wandb: true
   wandb_config:
     project: neb
-    group: search-cifar
+    group: cifar
     name: seed0
 
 device_config:

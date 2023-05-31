@@ -42,7 +42,7 @@ log_config:
   use_wandb: true
   wandb_config:
     project: neb
-    group: search-ant
+    group: ant-v2
     name: seed0
 
 device_config:

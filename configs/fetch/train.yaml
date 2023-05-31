@@ -3,7 +3,7 @@ train_config:
   num_generations: 2000
   eval_every_gen: 50
   strategy_name: SNES
-  popsize: 512
+  popsize: 256
   problem_type: brax
   env_name: fetch
   task_config:
@@ -11,9 +11,9 @@ train_config:
     num_evals_per_member: 8
     noise_level: 0.0
   model_config:
-    num_hidden_layers: 4
+    num_hidden_layers: 2
     num_hidden_units: 32
-    output_act_fn: swish
+    hidden_act_fn: tanh
   es_params:
     init_min: 0.0
     init_max: 0.0
@@ -42,7 +42,7 @@ log_config:
   use_wandb: true
   wandb_config:
     project: neb
-    group: search-fetch
+    group: fetch-v2
     name: seed0
 
 device_config:

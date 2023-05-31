@@ -47,9 +47,6 @@ single_job_args:
     env_name: "es_benchmark"
     time_per_job: "03:00:00"
     partition:
-        - gpu-7d
+        - ex_scioi_gpu
+        - ex_scioi_a100nv
     gpu_type: null
-    # memory_per_cpu: 10000
-    # gpu_prefix: "cuda"
-    # queue:
-    #     - "cognition-all.q"
