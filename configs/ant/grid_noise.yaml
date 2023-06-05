@@ -4,7 +4,7 @@ meta_job_args:
     experiment_type: "hyperparameter-search"
     base_train_fname: "mle_eval.sh"
     base_train_config: "configs/ant/train.yaml"
-    experiment_dir: "experiments/ant/grid"
+    experiment_dir: "experiments/ant/grid_noise_2"
 
 # Parameters specific to the hyperparameter search
 param_search_args:
@@ -16,8 +16,8 @@ param_search_args:
             - "test_eval_perf"
     search_resources:
         num_search_batches: 1
-        num_evals_per_batch: 108
-        num_seeds_per_eval: 5
+        num_evals_per_batch: 75
+        num_seeds_per_eval: 3
     search_config:
         search_type: "Grid"
         search_schedule: "sync"
@@ -33,14 +33,12 @@ param_search_args:
                 - 64
                 - 128
                 - 256
-                - 512
             task_config/num_evals_per_member:
                 - 1
                 - 2
                 - 4
                 - 8
                 - 16
-                - 32
             task_config/noise_level:
                 - 0.0
                 - 0.05
@@ -58,7 +56,7 @@ single_job_args:
     time_per_job: "00:01:00"
     partition:
         - "ex_scioi_gpu"
-        - "test_a100nv"
+        - "ex_scioi_a100nv"
     gpu_type: null
     memory_per_cpu: 10000
     # gpu_prefix: "cuda"

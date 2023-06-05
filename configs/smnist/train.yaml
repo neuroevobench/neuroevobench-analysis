@@ -1,6 +1,6 @@
 train_config:
   results_dir: experiments/smnist/search
-  num_generations: 5000
+  num_generations: 3500
   eval_every_gen: 200
   strategy_name: SNES
   popsize: 512

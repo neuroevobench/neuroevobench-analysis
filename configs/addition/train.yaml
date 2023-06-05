@@ -7,7 +7,7 @@ train_config:
   problem_type: addition
   task_config:
     batch_size: 1024
-    seq_length: 100
+    seq_length: 150
   model_config:
     num_hidden_units: 32
   es_params:
@@ -38,7 +38,7 @@ log_config:
   use_wandb: true
   wandb_config:
     project: neb
-    group: addition
+    group: addition-v2
     name: seed0
 
 device_config:

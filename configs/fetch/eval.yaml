@@ -24,7 +24,7 @@ param_search_args:
         search_params:
           categorical:
             env_name:
-                - smnist
+                - fetch
             strategy_name:
                 - OpenES
                 - PGPE
@@ -46,10 +46,10 @@ single_job_args:
     err_file: "err"
     # env_name: "es_bench"
     env_name: "es_benchmark"
-    time_per_job: "00:01:00"
+    time_per_job: "00:05:00"
     partition:
-        # - "ex_scioi_gpu"
-        - "test_a100nv"
+        - "ex_scioi_gpu"
+        - "ex_scioi_a100nv"
     gpu_type: null
     memory_per_cpu: 10000
     # gpu_prefix: "cuda"
