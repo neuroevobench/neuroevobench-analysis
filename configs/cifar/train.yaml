@@ -1,6 +1,6 @@
 train_config:
   results_dir: experiments/cifar/search
-  num_generations: 5000
+  num_generations: 2500
   eval_every_gen: 100
   strategy_name: SNES
   popsize: 128
