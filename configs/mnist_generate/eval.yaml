@@ -2,7 +2,7 @@
 meta_job_args:
     project_name: "neuroevobench"
     experiment_type: "hyperparameter-search"
-    base_train_fname: "mle_eval.sh"
+    base_train_fname: "launch/mle_eval.sh"
     base_train_config: "configs/mnist_generate/train.yaml"
     experiment_dir: "experiments/mnist_generate/eval"
 

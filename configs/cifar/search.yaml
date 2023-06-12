@@ -2,7 +2,7 @@
 meta_job_args:
     project_name: "neuroevobench"
     experiment_type: "hyperparameter-search"
-    base_train_fname: "mle_search.sh"
+    base_train_fname: "launch/mle_search.sh"
     base_train_config: "configs/cifar/train.yaml"
     experiment_dir: "experiments/cifar/search"
 
