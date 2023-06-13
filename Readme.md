@@ -19,6 +19,38 @@ These experiments will create their own result subdirectories, e.g. `experiments
 mle run configs/fetch/eval_scaling -p Population v model Fetch
 ```
 
+## Adjusting Configuration Settings
+
+If you would like to alter the settings (e.g. population size or number of generations) please have a look at the core `train.yaml` files. E.g. for the [fetch task here](https://github.com/neuroevobench/neuroevobench-analysis/blob/main/configs/fetch/train.yaml):
+
+```yaml
+train_config:
+  results_dir: experiments/fetch/search
+  num_generations: 2000
+  eval_every_gen: 50
+  strategy_name: SNES
+  popsize: 256
+  problem_type: brax
+  env_name: fetch
+  task_config:
+    max_steps: 500
+    num_evals_per_member: 8
+    noise_level: 0.0
+  model_config:
+    num_hidden_layers: 2
+    num_hidden_units: 32
+    hidden_act_fn: tanh
+  es_params:
+    init_min: 0.0
+    init_max: 0.0
+  es_config:
+    sigma_init: 0.05
+  num_hyper_search_iters: 50
+  search_config:
+    refine_after: 40
+    refine_top_k: 10
+```
+
 ## Downloading experiment data (lcurves & search history)
 
 All of the search histories, multi-seed re-evaluations and grid sweeps are stored in a Google Cloud Storage bucket. If you would like to benchmark against the 10 EO methods, please download the data here:
