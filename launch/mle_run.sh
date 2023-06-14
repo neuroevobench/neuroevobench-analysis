@@ -27,7 +27,7 @@ case $key in
     shift # past value
     ;;
     -wb_group|--wb_group)
-    WB_GROUP="run-$2"
+    WB_GROUP="default-$2"
     shift # past argument
     shift # past value
     ;;
