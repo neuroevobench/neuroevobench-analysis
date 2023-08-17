@@ -1,0 +1,37 @@
+train_config:
+  results_dir: experiments/hpob/search
+  problem_type: hpob
+  strategy_name: "Sep_CMA_ES"
+  num_generations: 100
+  popsize: 4
+  es_config:
+    sigma_init: 0.15
+  es_params:
+    init_min: 0.5
+    init_max: 0.5
+  num_hyper_search_iters: 50
+  search_config:
+    refine_after: 40
+    refine_top_k: 10
+
+log_config:
+  time_to_track: 
+    - "search_iter"
+    - "num_gens"
+  what_to_track:
+    - "test_eval_perf"
+  what_to_print:
+    - "test_eval_perf"
+  verbose: true
+  print_every_k_updates: 1
+  overwrite: 1
+  model_type: "jax"
+  use_wandb: false
+  wandb_config:
+    project: es-bench
+    group: hpob
+    name: seed0
+
+device_config:
+  device_type: "gpu"
+  num_devices: 1

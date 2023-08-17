@@ -2,7 +2,7 @@ train_config:
   results_dir: experiments/addition/search
   num_generations: 5000
   eval_every_gen: 200
-  strategy_name: SNES
+  strategy_name: BayesOptJAX
   popsize: 128
   problem_type: addition
   task_config:
