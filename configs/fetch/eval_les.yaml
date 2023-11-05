@@ -1,0 +1,50 @@
+# Meta Arguments: What job? What train .py file? Base config? Where to store?
+meta_job_args:
+    project_name: "neuroevobench"
+    experiment_type: "hyperparameter-search"
+    base_train_fname: "launch/mle_eval.sh"
+    base_train_config: "configs/fetch/train.yaml"
+    experiment_dir: "experiments/fetch/eval_les"
+
+# Parameters specific to the hyperparameter search
+param_search_args:
+    search_logging:
+        max_objective: True
+        aggregate_seeds: "mean"
+        problem_type: "best"
+        eval_metrics:
+            - "test_eval_perf"
+    search_resources:
+        num_search_batches: 1
+        num_evals_per_batch: 10
+        num_seeds_per_eval: 5
+    search_config:
+        search_type: "Grid"
+        search_schedule: "sync"
+        search_params:
+          categorical:
+            env_name:
+                - fetch
+            strategy_name:
+                - LES
+            results_dir:
+                - experiments/fetch/search_les
+
+# Parameters specific to an individual job
+single_job_args:
+    job_name: "es_bench"
+    num_gpus: 1
+    num_logical_cores: 4
+    log_file: "log"
+    err_file: "err"
+    # env_name: "es_bench"
+    env_name: "es_benchmark"
+    time_per_job: "00:05:00"
+    partition:
+        - "ex_scioi_gpu"
+        - "ex_scioi_a100nv"
+    gpu_type: null
+    memory_per_cpu: 10000
+    # gpu_prefix: "cuda"
+    # queue:
+    #     - "cognition-all.q"
